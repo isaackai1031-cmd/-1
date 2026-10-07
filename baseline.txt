@@ -1,0 +1,48 @@
+﻿# L01 — Чадварын оношилгоо
+
+## 1. Агуулахын ойлголт
+- Орлого = агуулахад бараа нэмэгдэх
+- Зарлага = агуулахаас бараа хасагдах
+- Үлдэгдэл = Өмнөх + Орлого - Зарлага
+- Дүрэм: Үлдэгдэл 0-ээс бага болох ёсгүй
+
+## 2. Гурван оролдлого
+
+### Оролдлого 1: JavaScript
+const products = [
+  { name: "Дэвтэр", stock: 25 },
+  { name: "Үзэг", stock: 8 },
+  { name: "Хавтас", stock: 3 },
+  { name: "Маркер", stock: 15 },
+  { name: "Цаас", stock: 2 }
+];
+const lowStock = products.filter(p => p.stock < 10);
+
+### Оролдлого 2: Python
+products = [
+    {"name": "Дэвтэр", "stock": 25},
+    {"name": "Үзэг", "stock": 8},
+    {"name": "Хавтас", "stock": 3},
+    {"name": "Маркер", "stock": 15},
+    {"name": "Цаас", "stock": 2}
+]
+low_stock = [p for p in products if p["stock"] < 10]
+
+### Оролдлого 3: SQL
+SELECT p.name, w.name AS warehouse, sb.quantity
+FROM stock_balances sb
+JOIN products p ON p.id = sb.product_id
+JOIN warehouses w ON w.id = sb.warehouse_id
+WHERE sb.quantity < 10;
+
+Гараар таамагласан үр дүн:
+[Өөрөө бичнэ]
+
+## 3. Мэдэхгүй зүйлсийн жагсаалт
+- SQL JOIN-ийн нарийн ойлголт
+- Transaction rollback
+- ...
+
+## 4. Хувийн хоёр зорилго
+1. Git-ийг сайн эзэмших
+2. User story бичиж сурах

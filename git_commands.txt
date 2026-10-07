@@ -1,0 +1,18 @@
+﻿# Git командууд (терминалд бичнэ)
+
+## Репозиторио үүсгэж GitHub руу илгээх
+echo "# Агуулахын бүртгэлийн систем" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/isaackai1031-cmd/warehouse-learning.git
+git push -u origin main
+
+## Issue + Branch + PR
+git checkout -b feature/readme-update
+git add README.md
+git commit -m "docs: README нэмэв"
+git push origin feature/readme-update
+
+Дараа нь GitHub дээр Pull Request үүсгэнэ.

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Агуулахын бүртгэл</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Агуулахын бүртгэл</h1>
+      <label class="backend">Backend
+        <select id="backend">
+          <option value="http://localhost:3000">Node.js (3000)</option>
+          <option value="http://localhost:8000">Python (8000)</option>
+        </select>
+      </label>
+    </header>
+
+    <p id="status" role="status" aria-live="polite"></p>
+
+    <section aria-labelledby="add-title">
+      <h2 id="add-title">Шинэ бараа</h2>
+      <form id="productForm" novalidate>
+        <label>SKU
+          <input id="sku" maxlength="50" autocomplete="off" required>
+        </label>
+        <label>Нэр
+          <input id="name" maxlength="255" autocomplete="off" required>
+        </label>
+        <button type="submit">Хадгалах</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="list-title">
+      <div class="list-head">
+        <h2 id="list-title">Барааны жагсаалт</h2>
+        <button id="reload" type="button" class="secondary">Дахин ачаалах</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">SKU</th><th scope="col">Нэр</th></tr></thead>
+          <tbody id="productList"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>
